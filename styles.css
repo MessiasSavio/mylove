@@ -1,0 +1,124 @@
+/* reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #fff);
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #ff6666d6;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 2em;
+  color: #cc3366;
+}
+
+.section p {
+  font-size: 1.1em;
+  color: #444;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+/* corações flutuantes */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  width: 20px; height: 20px;
+  background: red; transform: rotate(45deg);
+  animation: float 10s infinite ease-in-out;
+  z-index: 9999;
+}
+.heart::before, .heart::after {
+  content: ""; position: absolute;
+  width: 20px; height: 20px;
+  background: red; border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after  { left: -10px; top: 0; }
+@keyframes float {
+  0%   { transform: translateY(0) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* carrossel */
+.carousel-container {
+  position: relative; max-width: 600px;
+  margin: 20px auto; overflow: hidden;
+}
+.carousel {
+  display: flex; transition: transform 0.5s ease;
+}
+.carousel img {
+  width: 100%; flex-shrink: 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.carousel-button {
+  position: absolute; top: 50%;
+  background: rgba(0,0,0,0.5); color: #fff;
+  border: none; padding: 10px; cursor: pointer;
+  font-size: 18px; border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.carousel-button.prev { left: 10px; }
+.carousel-button.next { right: 10px; }
+.carousel-button:hover { background: rgba(0,0,0,0.8); }
+
+/* presente */
+#present-title {
+  cursor: pointer;
+  color: #FF66B2;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 5px;
+  max-width: 300px;
+  margin: 40px auto;
+  transition: color 0.3s;
+}
+#present-title:hover {
+  color: #ff3399;
+}
+#gift-modal {
+  display: none;
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center; justify-content: center;
+  z-index: 10000;
+}
+#gift-modal-content {
+  background: #fff; padding: 30px;
+  border-radius: 15px; text-align: center;
+  max-width: 500px; width: 80%;
+}
+#gift-modal-content img {
+  max-width: 100%; border-radius: 10px;
+}
+#gift-modal-content p {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #cc3366;
+}
+.carousel video {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
